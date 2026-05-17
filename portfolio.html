@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Aanchal Makhija — Software Engineer</title>
+<meta name="description" content="Aanchal Makhija — Software Engineer at TCS. Backend dev, AWS Cloud, DSA, System Design."/>
+<meta property="og:title" content="Aanchal Makhija — Software Engineer"/>
+<meta property="og:description" content="On a mission to CODE 365 days! Software Engineer @ TCS."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#04060f;--surface:#080d1a;--card:#0d1525;--b1:#5b8dee;--b2:#a78bfa;--b3:#34d399;--txt:#e8f0ff;--muted:#6b7fa8;--border:rgba(91,141,238,0.15);--fs:'Cabinet Grotesk',sans-serif;--fd:'Clash Display',sans-serif}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:var(--fs);font-weight:400;overflow-x:hidden;line-height:1.7}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2.5rem;background:rgba(4,6,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.1rem;background:linear-gradient(135deg,var(--b1),var(--b2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);font-size:.8rem;text-decoration:none;text-transform:uppercase;letter-spacing:.1em;transition:color .2s;cursor:pointer}
+.nav-links a:hover{color:var(--txt)}
+main{position:relative;z-index:1}
+section{max-width:1100px;margin:0 auto;padding:5rem 2rem}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 2rem 3rem;max-width:1100px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--b1);background:rgba(91,141,238,.08);border:1px solid rgba(91,141,238,.25);padding:.35rem .9rem;border-radius:100px;margin-bottom:1.8rem;animation:fadeUp .6s ease both}
+.hero-badge::before{content:'●';font-size:.45rem;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero-title{font-family:var(--fd);font-weight:700;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.0;letter-spacing:-.02em;animation:fadeUp .6s .1s ease both}
+.grad{background:linear-gradient(135deg,var(--b1) 0%,var(--b2) 50%,var(--b3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(.95rem,1.8vw,1.1rem);color:var(--muted);margin-top:1.2rem;max-width:520px;line-height:1.8;animation:fadeUp .6s .2s ease both}
+.hero-btns{display:flex;gap:.9rem;margin-top:2.2rem;flex-wrap:wrap;animation:fadeUp .6s .3s ease both}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;border-radius:10px;font-size:.88rem;font-weight:500;font-family:var(--fs);text-decoration:none;cursor:pointer;border:none;transition:all .25s}
+.btn-p{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff}
+.btn-p:hover{opacity:.85;transform:translateY(-3px);box-shadow:0 10px 28px rgba(91,141,238,.35)}
+.btn-o{background:transparent;color:var(--txt);border:1px solid var(--border)}
+.btn-o:hover{border-color:var(--b1);color:var(--b1);transform:translateY(-3px)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;animation:fadeUp .6s .4s ease both;flex-wrap:wrap}
+.stat-n{font-family:var(--fd);font-weight:700;font-size:2rem;background:linear-gradient(135deg,var(--b1),var(--b2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.1rem}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+.slabel{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--b1);display:block;margin-bottom:.5rem}
+.stitle{font-family:var(--fd);font-weight:700;font-size:clamp(1.7rem,3.5vw,2.5rem);line-height:1.15;margin-bottom:2.5rem}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.about-p{color:var(--muted);margin-bottom:1.1rem;font-size:.97rem}
+.about-p strong{color:var(--txt);font-weight:700}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;transition:border-color .3s}
+.info-card:hover{border-color:rgba(91,141,238,.4)}
+.ic-title{font-family:var(--fd);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--b1);margin-bottom:1.2rem}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:.87rem}
+.info-row:last-child{border-bottom:none}
+.ik{color:var(--muted)}.iv{color:var(--txt);font-weight:500}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.3rem}
+.sk-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.6rem;transition:all .3s;position:relative;overflow:hidden}
+.sk-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(91,141,238,.05),transparent);opacity:0;transition:opacity .3s}
+.sk-card:hover{border-color:var(--b1);transform:translateY(-5px);box-shadow:0 20px 40px rgba(91,141,238,.1)}
+.sk-card:hover::before{opacity:1}
+.sk-icon{font-size:1.9rem;margin-bottom:.8rem}
+.sk-name{font-family:var(--fd);font-weight:600;font-size:1.05rem;margin-bottom:.7rem}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tag{font-size:.68rem;padding:.22rem .6rem;border-radius:100px;letter-spacing:.04em}
+.tb{background:rgba(91,141,238,.1);border:1px solid rgba(91,141,238,.2);color:var(--b1)}
+.tg{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);color:var(--b3)}
+.tp{background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);color:var(--b2)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.3rem}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem;transition:all .3s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.proj-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--b1),var(--b2));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.proj-card:hover::after{transform:scaleX(1)}
+.proj-card:hover{border-color:rgba(167,139,250,.35);transform:translateY(-6px);box-shadow:0 24px 48px rgba(167,139,250,.1)}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem}
+.proj-ico{font-size:1.9rem}
+.proj-gh{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);text-decoration:none;font-size:1rem;transition:all .2s}
+.proj-gh:hover{color:var(--txt);border-color:var(--b1);background:rgba(91,141,238,.1)}
+.proj-t{font-family:var(--fd);font-weight:600;font-size:1.08rem;margin-bottom:.4rem}
+.proj-d{color:var(--muted);font-size:.87rem;flex:1;margin-bottom:1.1rem;line-height:1.65}
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--b1),transparent)}
+.tl-item{padding-left:2rem;margin-bottom:2.8rem;position:relative}
+.tl-dot{position:absolute;left:-5.5px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--b1);box-shadow:0 0 14px rgba(91,141,238,.7)}
+.tl-period{font-size:.72rem;color:var(--b1);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
+.tl-role{font-family:var(--fd);font-weight:600;font-size:1.1rem;margin-bottom:.15rem}
+.tl-co{color:var(--muted);font-size:.88rem;margin-bottom:.7rem}
+.tl-desc{color:var(--muted);font-size:.9rem;line-height:1.75}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem}
+.cert{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.5rem;display:flex;align-items:flex-start;gap:.9rem;transition:all .25s}
+.cert:hover{border-color:var(--b3);transform:translateY(-3px);box-shadow:0 12px 28px rgba(52,211,153,.08)}
+.cert-badge{font-size:1.7rem;flex-shrink:0}
+.cert-name{font-weight:500;font-size:.88rem;line-height:1.4}
+.cert-issuer{font-size:.75rem;color:var(--muted);margin-top:.15rem}
+#contact{text-align:center}
+.contact-wrap{max-width:520px;margin:0 auto}
+.contact-p{color:var(--muted);margin-bottom:2rem;font-size:.97rem}
+.contact-links{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap}
+.c-link{display:inline-flex;align-items:center;gap:.55rem;padding:.65rem 1.4rem;border-radius:10px;font-size:.85rem;font-weight:500;background:var(--card);border:1px solid var(--border);color:var(--txt);text-decoration:none;transition:all .22s}
+.c-link:hover{border-color:var(--b1);color:var(--b1);transform:translateY(-3px);box-shadow:0 8px 20px rgba(91,141,238,.15)}
+footer{text-align:center;padding:2rem;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem;position:relative;z-index:1}
+footer span{color:var(--b1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.floating-badge{position:fixed;bottom:2rem;right:2rem;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:.55rem 1.1rem;font-size:.75rem;color:var(--b1);z-index:99;display:flex;align-items:center;gap:.4rem;backdrop-filter:blur(10px);animation:fadeUp 1s 1s ease both}
+.floating-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--b3);animation:blink 2s infinite}
+@media(max-width:768px){.nav{padding:.8rem 1.2rem}.nav-links{gap:1.2rem}.about-grid{grid-template-columns:1fr;gap:2rem}.hero-stats{gap:1.5rem}}
+@media(max-width:480px){.nav-links{gap:.8rem}.nav-links li:nth-child(n+4){display:none}}
+</style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<nav class="nav">
+  <div class="nav-brand">AM</div>
+  <ul class="nav-links">
+    <li><a onclick="scroll2('about')">About</a></li>
+    <li><a onclick="scroll2('skills')">Skills</a></li>
+    <li><a onclick="scroll2('projects')">Projects</a></li>
+    <li><a onclick="scroll2('experience')">Experience</a></li>
+    <li><a onclick="scroll2('contact')">Contact</a></li>
+  </ul>
+</nav>
+<main>
+<div class="hero">
+  <div class="hero-badge">On a mission to CODE 365 days!</div>
+  <h1 class="hero-title">Hi, I'm<br><span class="grad">Aanchal Makhija</span></h1>
+  <p class="hero-sub">Software Engineer @ TCS · Building scalable backends, exploring AWS Cloud &amp; mastering DSA &amp; System Design — one commit at a time.</p>
+  <div class="hero-btns">
+    <a href="https://github.com/AanchalMakhija" target="_blank" class="btn btn-p">⚡ GitHub</a>
+    <a href="https://www.linkedin.com/in/aanchal-makhija-8b9183257/" target="_blank" class="btn btn-o">→ LinkedIn</a>
+    <a onclick="scroll2('contact')" class="btn btn-o" style="cursor:pointer">Get in Touch</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-n">8+</div><div class="stat-l">Repositories</div></div>
+    <div><div class="stat-n">365</div><div class="stat-l">Day Goal</div></div>
+    <div><div class="stat-n">TCS</div><div class="stat-l">Current Employer</div></div>
+    <div><div class="stat-n">∞</div><div class="stat-l">Learning Mode</div></div>
+  </div>
+</div>
+<div class="divider"></div>
+<section id="about">
+  <span class="slabel reveal">Who I Am</span>
+  <h2 class="stitle reveal">A developer who loves<br>building things that scale.</h2>
+  <div class="about-grid">
+    <div class="reveal">
+      <p class="about-p">I'm <strong>Aanchal Makhija</strong>, a passionate software engineer working at <strong>Tata Consultancy Services (TCS)</strong>. My mission? To write code every single day and build systems that truly matter.</p>
+      <p class="about-p">My expertise spans <strong>backend development</strong>, <strong>cloud computing on AWS</strong>, and scalable application design. I believe great software lives at the intersection of solid engineering and creative problem-solving.</p>
+      <p class="about-p">Beyond work, I'm constantly pushing my limits — mastering <strong>DSA</strong>, diving into <strong>System Design patterns</strong>, and exploring the latest in cloud-native architectures.</p>
+      <p class="about-p" style="margin-bottom:0">I'm on a relentless coding streak — turning caffeine into commits, bugs into lessons, and ideas into deployed products.</p>
+    </div>
+    <div class="reveal">
+      <div class="info-card">
+        <div class="ic-title">Quick Facts</div>
+        <div class="info-row"><span class="ik">🏢 Company</span><span class="iv">TCS</span></div>
+        <div class="info-row"><span class="ik">💼 Role</span><span class="iv">Software Engineer</span></div>
+        <div class="info-row"><span class="ik">📍 Location</span><span class="iv">India</span></div>
+        <div class="info-row"><span class="ik">☁️ Currently</span><span class="iv">AWS &amp; Cloud</span></div>
+        <div class="info-row"><span class="ik">🧠 Focus</span><span class="iv">Backend, DSA, Design</span></div>
+        <div class="info-row"><span class="ik">🎯 Mission</span><span class="iv">Code 365 Days</span></div>
+        <div class="info-row"><span class="ik">🔗 GitHub</span><span class="iv">AanchalMakhija</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="skills">
+  <span class="slabel reveal">What I Work With</span>
+  <h2 class="stitle reveal">Tech Stack &amp; Skills</h2>
+  <div class="skills-grid">
+    <div class="sk-card reveal"><div class="sk-icon">☁️</div><div class="sk-name">Cloud &amp; DevOps</div><div class="tags"><span class="tag tg">AWS</span><span class="tag tg">Docker</span><span class="tag tg">Kubernetes</span><span class="tag tg">CI/CD</span></div></div>
+    <div class="sk-card reveal"><div class="sk-icon">⚙️</div><div class="sk-name">Backend Dev</div><div class="tags"><span class="tag tb">Java</span><span class="tag tb">Python</span><span class="tag tb">Node.js</span><span class="tag tb">Express</span><span class="tag tb">C/C++</span></div></div>
+    <div class="sk-card reveal"><div class="sk-icon">🗄️</div><div class="sk-name">Databases</div><div class="tags"><span class="tag tp">PostgreSQL</span><span class="tag tp">MySQL</span><span class="tag tp">MongoDB</span></div></div>
+    <div class="sk-card reveal"><div class="sk-icon">🌐</div><div class="sk-name">Frontend</div><div class="tags"><span class="tag tb">Next.js</span><span class="tag tb">TypeScript</span><span class="tag tb">CSS</span><span class="tag tb">Tailwind</span></div></div>
+    <div class="sk-card reveal"><div class="sk-icon">🧠</div><div class="sk-name">CS Fundamentals</div><div class="tags"><span class="tag tg">DSA</span><span class="tag tg">System Design</span><span class="tag tg">OOP</span><span class="tag tg">Algorithms</span></div></div>
+    <div class="sk-card reveal"><div class="sk-icon">🔧</div><div class="sk-name">Tools</div><div class="tags"><span class="tag tp">Git</span><span class="tag tp">GitHub</span><span class="tag tp">Linux</span><span class="tag tp">Weka</span></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="projects">
+  <span class="slabel reveal">Things I've Built</span>
+  <h2 class="stitle reveal">Projects</h2>
+  <div class="proj-grid">
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-ico">🎗️</div><a href="https://github.com/AanchalMakhija/breast-cancer-detection-using-data-mining" target="_blank" class="proj-gh">↗</a></div>
+      <div class="proj-t">Breast Cancer Detection</div>
+      <div class="proj-d">Data mining pipeline with Weka to detect and classify breast cancer patterns — contributing to early diagnosis research and clinical decision support.</div>
+      <div class="tags"><span class="tag tg">Data Mining</span><span class="tag tg">Weka</span><span class="tag tg">ML</span></div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-ico">🌱</div><a href="https://github.com/AanchalMakhija/kratin" target="_blank" class="proj-gh">↗</a></div>
+      <div class="proj-t">Kratin</div>
+      <div class="proj-d">A JavaScript-based web project showcasing clean frontend development, interactive features, and production-ready code practices.</div>
+      <div class="tags"><span class="tag tb">JavaScript</span><span class="tag tb">Frontend</span><span class="tag tb">Web</span></div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-ico">🚀</div><a href="https://github.com/AanchalMakhija" target="_blank" class="proj-gh">↗</a></div>
+      <div class="proj-t">More Coming Soon...</div>
+      <div class="proj-d">Always building — check out GitHub for the latest repos, cloud experiments, and system design explorations in progress.</div>
+      <div class="tags"><span class="tag tp">AWS</span><span class="tag tp">Backend</span><span class="tag tp">Open Source</span></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="experience">
+  <span class="slabel reveal">Where I've Been</span>
+  <h2 class="stitle reveal">Experience</h2>
+  <div class="timeline reveal">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">2023 – Present</div>
+      <div class="tl-role">Software Engineer</div>
+      <div class="tl-co">Tata Consultancy Services (TCS)</div>
+      <div class="tl-desc">Building enterprise-scale software, contributing to backend systems, and collaborating across teams to ship production-grade applications. Applying cloud-native AWS patterns and solving complex algorithmic challenges daily.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Ongoing</div>
+      <div class="tl-role">365-Day Coding Streak</div>
+      <div class="tl-co">Personal Mission</div>
+      <div class="tl-desc">Writing code every single day — algorithmic challenges, side projects, and deepening expertise in System Design, AWS, and scalable backend architectures.</div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="certifications">
+  <span class="slabel reveal">Credentials</span>
+  <h2 class="stitle reveal">Certifications</h2>
+  <div class="certs-grid">
+    <div class="cert reveal"><div class="cert-badge">☁️</div><div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div></div></div>
+    <div class="cert reveal"><div class="cert-badge">🏆</div><div><div class="cert-name">LinkedIn Certifications</div><div class="cert-issuer">View on LinkedIn</div></div></div>
+    <div class="cert reveal"><div class="cert-badge">⚡</div><div><div class="cert-name">GitHub Achievements</div><div class="cert-issuer">Quickdraw · Pull Shark</div></div></div>
+    <div class="cert reveal"><div class="cert-badge">🎓</div><div><div class="cert-name">More on LinkedIn</div><div class="cert-issuer"><a href="https://www.linkedin.com/in/aanchal-makhija-8b9183257/" target="_blank" style="color:#34d399;text-decoration:none">linkedin.com/in/aanchal-makhija</a></div></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="contact">
+  <div class="contact-wrap">
+    <span class="slabel reveal" style="display:block;text-align:center">Let's Connect</span>
+    <h2 class="stitle reveal" style="text-align:center">Get In Touch</h2>
+    <p class="contact-p reveal">Whether you want to collaborate, talk tech, or just say hi — I'm always open. Let's build something incredible together!</p>
+    <div class="contact-links reveal">
+      <a href="mailto:aanchalmakhija@gmail.com" class="c-link">📧 Email</a>
+      <a href="https://github.com/AanchalMakhija" target="_blank" class="c-link">💻 GitHub</a>
+      <a href="https://www.linkedin.com/in/aanchal-makhija-8b9183257/" target="_blank" class="c-link">🔗 LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><p>Built with ❤️ by <span>Aanchal Makhija</span> · 2025 · On a mission to CODE 365 days 🚀</p></footer>
+<div class="floating-badge">Available for opportunities</div>
+<script>
+const canvas=document.getElementById('bg-canvas');
+const ctx=canvas.getContext('2d');
+let W,H,particles=[],mouse={x:0,y:0};
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+window.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY;});
+class Particle{
+  constructor(){this.reset()}
+  reset(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-.5)*.4;this.vy=(Math.random()-.5)*.4;this.r=Math.random()*1.8+.4;this.alpha=Math.random()*.5+.15;this.color=['#5b8dee','#a78bfa','#34d399'][Math.floor(Math.random()*3)];}
+  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset();const dx=this.x-mouse.x,dy=this.y-mouse.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<100){this.x+=dx/dist*1.2;this.y+=dy/dist*1.2;}}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.color+Math.round(this.alpha*255).toString(16).padStart(2,'0');ctx.fill();}
+}
+for(let i=0;i<110;i++)particles.push(new Particle());
+function drawConnections(){for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(91,141,238,${.15*(1-d/130)})`;ctx.lineWidth=.5;ctx.stroke();}}}}
+let t=0;
+function drawOrbs(){[{x:.15,y:.2,r:280,c:'rgba(91,141,238,'},{x:.82,y:.7,r:220,c:'rgba(167,139,250,'},{x:.5,y:.5,r:180,c:'rgba(52,211,153,'}].forEach((o,i)=>{const ox=W*(o.x+Math.sin(t*.0008+i*2)*.04),oy=H*(o.y+Math.cos(t*.0007+i*1.5)*.04);const g=ctx.createRadialGradient(ox,oy,0,ox,oy,o.r);g.addColorStop(0,o.c+'0.08)');g.addColorStop(1,o.c+'0)');ctx.beginPath();ctx.arc(ox,oy,o.r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();});}
+function loop(ts){t=ts;ctx.clearRect(0,0,W,H);drawOrbs();drawConnections();particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(loop);}
+requestAnimationFrame(loop);
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*55);});},{threshold:.1});
+reveals.forEach(el=>io.observe(el));
+function scroll2(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+window.addEventListener('scroll',()=>{['about','skills','projects','experience','contact'].forEach(id=>{const el=document.getElementById(id);if(!el)return;const r=el.getBoundingClientRect();if(r.top<=120&&r.bottom>0){document.querySelectorAll('.nav-links a').forEach(a=>{a.style.color=a.getAttribute('onclick')?.includes(id)?'#e8f0ff':'';});}});});
+</script>
+</body>
+</html>
